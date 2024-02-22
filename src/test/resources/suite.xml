@@ -1,0 +1,9 @@
+<suite name="Web Automation Suite">
+    <parameter name="url" value="https://www.wikipedia.org/wiki/Wikipedia:Portada" />
+
+    <test name="Search Test">
+        <classes>
+
+        </classes>
+    </test>
+</suite>
