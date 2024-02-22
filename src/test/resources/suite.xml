@@ -1,9 +1,11 @@
 <suite name="Web Automation Suite">
-    <parameter name="url" value="https://www.wikipedia.org/wiki/Wikipedia:Portada" />
+    <parameter name="url" value="https://www.saucedemo.com/" />
+    <parameter name="username" value="standard_user" />
+    <parameter name="password" value="secret_sauce" />
 
     <test name="Search Test">
         <classes>
-
+            <class name="tests.PurchaseProductTest"/>
         </classes>
     </test>
 </suite>

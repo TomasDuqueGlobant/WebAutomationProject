@@ -37,6 +37,7 @@ public class BasePage {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
 
+
     public void waitSomeSeconds(int time){
         try{
             Thread.sleep(time * 1000);
