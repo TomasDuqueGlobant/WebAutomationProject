@@ -2,10 +2,15 @@
     <parameter name="url" value="https://www.saucedemo.com/" />
     <parameter name="username" value="standard_user" />
     <parameter name="password" value="secret_sauce" />
+    <parameter name="firstname" value="Tomás" />
+    <parameter name="lastname" value="Duque" />
+    <parameter name="zipcode" value="012346" />
+    <parameter name="title" value="Thank you for your order!" />
 
     <test name="Search Test">
         <classes>
             <class name="tests.PurchaseProductTest"/>
+            <class name="tests.RemoveProductTest"/>
         </classes>
     </test>
 </suite>

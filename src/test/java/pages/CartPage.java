@@ -13,8 +13,21 @@ public class CartPage extends BasePage {
 
     @FindBy(id="checkout")
     private WebElement checkoutBtn;
+    @FindBy(id = "remove-sauce-labs-bolt-t-shirt")
+    private WebElement removeTshirtBtn;
 
-    public void doCheckout(){
+    public CheckoutPage navigateToCheckout(){
         checkoutBtn.click();
+
+        return new CheckoutPage(super.getDriver());
+    }
+
+    public void removeProduct(){
+        removeTshirtBtn.click();
+        waitSomeSeconds(5);
+    }
+
+    public boolean isRemovedProductDisplayed(){
+        return removeTshirtBtn.isDisplayed();
     }
 }

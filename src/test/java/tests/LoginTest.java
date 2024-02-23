@@ -13,8 +13,7 @@ public class LoginTest extends BaseTest {
     @Parameters({"username", "password"})
     public void Login(String username, String password){
         LoginPage login = loadLogin();
-        ProductsPage products = loadProducts();
-        login.login(username,password);
+        ProductsPage products = login.login(username,password);
         Assert.assertTrue(products.isAddToCartButtonVisible());
     }
 }

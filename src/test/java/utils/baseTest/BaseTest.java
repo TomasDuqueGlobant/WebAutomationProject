@@ -27,13 +27,11 @@ public class BaseTest {
     public LoginPage loadLogin(){
         return new LoginPage(driver.getDriver());
     }
-    public ProductsPage loadProducts(){
-        return new ProductsPage(driver.getDriver());
-    }
 
 
+//
 //   @AfterMethod()
 //   public void afterMethod(){
-//       driver.getDriver().close();
+//     driver.getDriver().close();
 //   }
 }
