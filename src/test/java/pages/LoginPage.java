@@ -17,11 +17,17 @@ public class LoginPage extends BasePage {
     @FindBy(id = "password")
     private WebElement password;
 
-    public void login(String username,String password ){
+    @FindBy(id= "login-button")
+    private WebElement loginBtn;
+
+    public ProductsPage login(String username,String password ){
         this.username.click();
         this.username.sendKeys(username);
         this.password.click();
         this.password.sendKeys(password);
+        loginBtn.click();
+        return new ProductsPage(super.getDriver());
+
     }
 
 }

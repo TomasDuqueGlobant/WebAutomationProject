@@ -4,6 +4,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pages.LoginPage;
+import pages.ProductsPage;
 import utils.MyDriver;
 
 public class BaseTest {
@@ -26,9 +27,13 @@ public class BaseTest {
     public LoginPage loadLogin(){
         return new LoginPage(driver.getDriver());
     }
-
-    @AfterMethod()
-    public void afterMethod(){
-        driver.getDriver().close();
+    public ProductsPage loadProducts(){
+        return new ProductsPage(driver.getDriver());
     }
+
+
+//   @AfterMethod()
+//   public void afterMethod(){
+//       driver.getDriver().close();
+//   }
 }
