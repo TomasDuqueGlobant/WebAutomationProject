@@ -1,5 +1,6 @@
 package utils.basePage;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -31,6 +32,15 @@ public class BasePage {
 
     public void waitToBeClickable(WebElement element){
         getWait().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public boolean isElementNotPresent(WebElement element){
+        try{
+            element.isDisplayed();
+            return false;
+        }catch (NoSuchElementException e){
+            return true;
+        }
     }
 
     public void waitElementVisibility(WebElement element){

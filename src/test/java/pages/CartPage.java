@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +17,10 @@ public class CartPage extends BasePage {
     private WebElement checkoutBtn;
     @FindBy(id = "remove-sauce-labs-bolt-t-shirt")
     private WebElement removeTshirtBtn;
+    @FindBy(xpath = "//button[@id=\"remove-sauce-labs-backpack\"]")
+    private WebElement removeBackPackBtn;
+    @FindBy(id = "remove-sauce-labs-bike-light")
+    private WebElement removeBikeBtn;
 
     public CheckoutPage navigateToCheckout(){
         checkoutBtn.click();
@@ -22,12 +28,17 @@ public class CartPage extends BasePage {
         return new CheckoutPage(super.getDriver());
     }
 
-    public void removeProduct(){
+    public void removeProducts(){
         removeTshirtBtn.click();
-        waitSomeSeconds(5);
+        removeBikeBtn.click();
+        removeBackPackBtn.click();
     }
 
-    public boolean isRemovedProductDisplayed(){
-        return removeTshirtBtn.isDisplayed();
+    public boolean isRemovedProductDisplayed() {
+        boolean removeBackPackNotPresent = isElementNotPresent(removeBackPackBtn);
+        boolean removeBikeBtnNotPresent = isElementNotPresent(removeBikeBtn);
+        boolean removeTshirtBtnNotPresent = isElementNotPresent(removeTshirtBtn);
+
+        return removeBackPackNotPresent && removeBikeBtnNotPresent && removeTshirtBtnNotPresent;
     }
 }

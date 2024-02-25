@@ -20,8 +20,7 @@ public class RemoveProductTest extends BaseTest {
         products.addProducts();
 
         CartPage cart = products.openCart();
-        cart.removeProduct();
-
+        cart.removeProducts();
         Assert.assertTrue(cart.isRemovedProductDisplayed());
 
 
