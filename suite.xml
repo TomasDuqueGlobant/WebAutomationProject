@@ -6,6 +6,8 @@
     <test name="Purchase Product Test">
         <classes>
             <class name="tests.PurchaseProductTest"/>
+            <class name="tests.RemoveProductTest"/>
+            <class name="tests.LogoutTest"/>
         </classes>
     </test>
 </suite>
